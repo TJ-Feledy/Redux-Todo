@@ -45,8 +45,14 @@ class AddTodo extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    todos: state.todos,
+  }
+}
+
 const mapDispatchToProps = {
   addTask: addTask,
 }
 
-export default connect(mapDispatchToProps)(AddTodo)
+export default connect(mapDispatchToProps, mapStateToProps)(AddTodo)
