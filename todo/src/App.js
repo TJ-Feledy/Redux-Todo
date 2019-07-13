@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <h1>Today's list of important things To Do!</h1>
-      <div className='todaysDate'>{moment().format('MMM Do YYYY')}</div>
+      <strong className='todaysDate'>{moment().format('MMM Do YYYY')}</strong>
       <TodoList />
       <AddTodo />
     </div>
