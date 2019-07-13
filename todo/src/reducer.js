@@ -9,7 +9,6 @@ export default function(state= initialState, action) {
     case ADD_TASK: {
       const { task } = action.payload
       const newTask = state.todos.concat([task])
-
       return {
         ...state,
         todos: newTask,
