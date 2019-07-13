@@ -1,12 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-function TodoList() {
+function TodoList(props) {
   return (
     <div className='list'>
       <ul>
         {props.todos.map((task, index) => {
-          <li key={index}>{task}</li>
+          return <li key={index}>{task}</li>
         })}
       </ul>
     </div>
