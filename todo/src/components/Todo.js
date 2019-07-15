@@ -24,8 +24,8 @@ function Todo(props) {
     <li className='todo'>
       <p className={`taskItem ${props.item.completed ? 'completed' : ''}`} onClick={clickHandler} >
         {props.item.value}
-        <button className='deleteButton' type='button' onClick={submitHandler} >Delete</button>
       </p>
+      <button className='deleteButton' type='button' onClick={submitHandler} >Delete</button>
     </li>
   );
 };
