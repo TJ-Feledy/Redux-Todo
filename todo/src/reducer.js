@@ -1,4 +1,4 @@
-import {ADD_TASK, TOGGLE_TASK} from './actions'
+import {ADD_TASK, TOGGLE_TASK, DELETE_TASK} from './actions'
 
 const initialState = {
   todos: []
@@ -8,7 +8,6 @@ export default function(state= initialState, action) {
   switch (action.type) {
     case ADD_TASK: {
       const { task } = action.payload
-      console.log(task)
       const newTask = {
         value: task,
         completed: false,
@@ -21,9 +20,16 @@ export default function(state= initialState, action) {
       }
     }
     case TOGGLE_TASK: {
-      const {task} = action.payload
-      console.log(task)
-      const newList = task
+      const {list} = action.payload
+      const newList = list
+      return {
+        ...state,
+        todos: newList
+      }
+    }
+    case DELETE_TASK: {
+      const {list} = action.payload
+      const newList = list
       return {
         ...state,
         todos: newList
