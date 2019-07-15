@@ -3,11 +3,25 @@ import {connect} from 'react-redux'
 import {toggleTask} from '../actions'
 
 function TodoList(props) {
+
+  const toggleComplete = (id) => {
+    const newTaskList = props.todos.map(item => {
+      if (item.id === id) {
+        const newTaskObj = { ...item, completed: !item.completed };
+        return newTaskObj;
+      }
+      else {
+        return item;
+      }
+    })
+    props.toggleTask(newTaskList)
+  }
+  
   return (
     <div className='list'>
       <ul>
         {props.todos.map((task, index) => {
-          return <li key={index} onClick={props.toggleTask} >{task.value}</li>
+          return <li key={index} onClick={toggleComplete(task.id)} >{task.value}</li>
         })}
       </ul>
     </div>
