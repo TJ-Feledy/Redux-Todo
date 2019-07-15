@@ -1,4 +1,5 @@
 import React from 'react'
+import Todo from './Todo'
 import {connect} from 'react-redux'
 import {toggleTask} from '../actions'
 
@@ -16,12 +17,12 @@ function TodoList(props) {
     })
     props.toggleTask(newTaskList)
   }
-  
+
   return (
     <div className='list'>
       <ul>
         {props.todos.map((task, index) => {
-          return <li key={index} onClick={toggleComplete(task.id)} >{task.value}</li>
+          return <Todo key={index} toggleComplete={toggleComplete} item={task} />
         })}
       </ul>
     </div>
