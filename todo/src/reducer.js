@@ -8,10 +8,14 @@ export default function(state= initialState, action) {
   switch (action.type) {
     case ADD_TASK: {
       const { task } = action.payload
-      const newTask = state.todos.concat([task])
+      const newTask = {
+        value: task,
+        completed: false,
+      }
+      const addTask = state.todos.concat([newTask])
       return {
         ...state,
-        todos: newTask,
+        todos: addTask,
       }
     }
     default:

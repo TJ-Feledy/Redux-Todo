@@ -6,7 +6,7 @@ function TodoList(props) {
     <div className='list'>
       <ul>
         {props.todos.map((task, index) => {
-          return <li key={index}>{task}</li>
+          return <li key={index}>{task.value}</li>
         })}
       </ul>
     </div>
