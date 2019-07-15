@@ -20,6 +20,9 @@ export default function(state= initialState, action) {
       }
     }
     case TOGGLE_TASK: {
+      const {task} = action.payload
+      const id = task.id
+      console.log(id)
       const newList = state.todos.map(task => {
         if (task.id === id) {
           task.completed = !task.completed
