@@ -11,11 +11,9 @@ function Todo(props) {
   const submitHandler = (evt) => {
     evt.preventDefault()
     removeTask(props.item.id)
-    console.log(props.item.id)
   }
 
   const removeTask = (id) => {
-    console.log(id)
     const newTaskList = props.todos.filter(task => task.id !== id)
     props.deleteTask(newTaskList)
   }
@@ -23,7 +21,7 @@ function Todo(props) {
   return (
     <li className='todo'>
       <p className={`taskItem ${props.item.completed ? 'completed' : ''}`} onClick={clickHandler} >
-        {props.item.value}
+        • {props.item.value}
       </p>
       <button className='deleteButton' type='button' onClick={submitHandler} >Delete</button>
     </li>
