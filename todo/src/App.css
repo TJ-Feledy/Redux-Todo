@@ -13,3 +13,7 @@
   height: 30px;
   margin: 0 40px;
 }
+
+.completed {
+  text-decoration: line-through wavy red;
+}
